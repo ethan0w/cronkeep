@@ -97,7 +97,7 @@ var CrontabService = function(alertService) {
             job.attr('data-hash', data.hash);
             
             // Refresh interface elements
-            job.addClass('inactive');
+            job.addClass('danger');
             pauseMenuItem.addClass('hidden').removeClass('show');
             resumeMenuItem.addClass('show').removeClass('hidden');
         }).fail(function(data) {
@@ -120,7 +120,7 @@ var CrontabService = function(alertService) {
             job.attr('data-hash', data.hash);
             
             // Refresh interface elements
-            job.removeClass('inactive');
+            job.removeClass('danger');
             resumeMenuItem.addClass('hidden').removeClass('show');
             pauseMenuItem.addClass('show').removeClass('hidden');
         }).fail(function(data) {

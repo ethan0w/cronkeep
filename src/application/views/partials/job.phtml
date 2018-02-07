@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 ?>
-<?php $classAttr = ($job->getIsPaused() ? ' class="inactive"' : ''); ?>
+<?php $classAttr = ($job->getIsPaused() ? ' class="danger"' : ''); ?>
 <tr data-hash="<?php echo $job->getHash() ?>"<?php echo $classAttr ?>>
     <td data-searchable="1"><?php echo $job->getExpression() ?></td>
     <td data-searchable="1">
