@@ -33,7 +33,7 @@ body {
 .job-add {
     margin-top: 20px;
 }
-.table-crontab > tbody > tr > td:nth-child(2) {
+.table-crontab > tbody > tr > td:nth-child(3) {
     -ms-word-break: break-all;
     word-break: break-all;
     word-break: break-word;
@@ -45,14 +45,11 @@ body {
 .table-crontab > thead > tr > th:nth-child(1) {
     width: 15%;
 }
-.table-crontab > thead > tr > th:nth-child(2) {
-    width: 73%;
-}
 .table-crontab > thead > tr > th:nth-child(3) {
-    width: 12%;
+    max-width: 450px;
 }
 .table-crontab .actions {
-	min-width: 95px;
+	min-width: 125px;
 }
 
 /* Inactive style for paused cron jobs */

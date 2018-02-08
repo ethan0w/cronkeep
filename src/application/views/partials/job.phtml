@@ -17,21 +17,23 @@
 ?>
 <?php $classAttr = ($job->getIsPaused() ? ' class="danger"' : ''); ?>
 <tr data-hash="<?php echo $job->getHash() ?>"<?php echo $classAttr ?>>
+    <td data-searchable="1"><?php echo $job->getComment() ?></td>
     <td data-searchable="1"><?php echo $job->getExpression() ?></td>
     <td data-searchable="1">
         <?php echo $job->getCommand() ?>
-        <?php if ($job->getComment()): ?>
-            <span class="glyphicon glyphicon-info-sign"
-                  data-toggle="tooltip" title="<?php echo $job->getComment() ?>"></span>
-        <?php endif; ?>
     </td>
     <td>
         <div class="btn-group pull-right hidden-xs actions">
-            <button type="button" class="btn btn-success job-run" title="Run Job Now"
-                    data-loading-text="Starting..." autocomplete="off">
-                <span class="glyphicon glyphicon-play"></span> Run
+            <?php if($job->getIsPaused()) { ?>
+            <button type="button" class="btn btn-sm btn-danger" title="Job stopped">
+                <span class="glyphicon glyphicon-stop"></span> Paused
             </button>
-            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+            <?php }else { ?>
+            <button type="button" class="btn btn-sm btn-success" title="Job running">
+                <span class="glyphicon glyphicon-play"></span> Running
+            </button>
+            <?php } ?>
+            <button type="button" class="btn btn-sm <?php echo ($job->getIsPaused() ? 'btn-danger' : 'btn-success')?> dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
